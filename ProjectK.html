@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For kohzek</title>
+    <link rel="stylesheet" href="ProjectK.css">  
+    <script>
+        var buttonTexts = ['Are u sure?...', 'Really sure? ', 'Think again!','Last chance!!!','This could be missclick'];
+        var currentTextIndex = 0;
+        var currentFontSize = 20;
+
+        function myFunction1(){
+            document.getElementById('img_1').style.display='none';
+            document.getElementById('img_2').style.display='block';
+            document.getElementById('bt').style.display='none';
+            document.getElementById('bt2').style.display='none';
+            document.getElementById('vapros').style.display='none';
+            document.getElementById('ura').style.display='block';
+        }
+
+        function myFunction2(){
+            var bt1 = document.getElementById('bt');
+            var bt2 = document.getElementById('bt2');
+
+            bt2.innerText = buttonTexts[currentTextIndex];
+
+            
+            currentTextIndex = (currentTextIndex + 1) % buttonTexts.length;
+            currentFontSize += 5;
+            bt1.style.fontSize = currentFontSize + "px";
+        }
+    </script> 
+</head>
+<body>
+    <img id="img_1" style="display:block;" src="img/bear-teddy-laugh.gif" alt="Описание GIF" vspace="100px" hspace="600px" width="300px" height="280px">
+    <img id="img_2" style="display:none;" src="img/mocha-and.gif" vspace="100px" hspace="560px" width="300px" height="280px">
+    <h1 id="ura" align="center" style="display:none;" style="font-family:Arial, Helvetica, sans-serif;">Ok yay!!!</h1>
+    <h1 id="vapros" align="center" style="display:block;" style="font-family:Arial, Helvetica, sans-serif;"><i>Will u be my sweatheart?...</i></h1>
+    <button onclick="myFunction1()" class="button" id="bt">YES</button>
+    <button onclick="myFunction2()" class="button2" id="bt2">NO</button>
+</body>
+
+</html>
